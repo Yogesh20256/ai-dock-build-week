@@ -1,0 +1,11 @@
+This is AI Dock, a natural-language desktop agent built for OpenAI Build Week. It began as a small always-on-top AI popup, then became an experiment in making computer automation powerful without making it opaque.
+
+A user can give AI Dock an informal, typo-filled, multi-step request. Every explicit clause becomes a mandatory intent contract. A cloud planner can interpret the language, but its output is treated as untrusted advice. Local schema, authority, workspace, and risk checks decide what may execute.
+
+More than one hundred ninety structured tools span seventeen MCP families, including desktop control, files, packages, development, research, documents, media, data, monitoring, knowledge, and reusable automation. Persistent typed state resolves follow-ups such as “move it” or “close that” without giving the model arbitrary shell access.
+
+Before side effects, each action is written to a crash-safe journal. Completed actions receive stable fingerprints, interrupted work can resume without repeating mutations, and observable outcomes such as files, windows, workspaces, and processes are verified. Failures trigger one bounded recovery pass instead of an uncontrolled loop.
+
+Codex was the primary engineering collaborator. It helped implement the runtime across many files, inspect the real CachyOS and Hyprland environment, diagnose failures, and convert those failures into permanent regression tests. The human supplied the product direction, real-world testing, safety choices, and acceptance criteria.
+
+The sanitized public edition contains no credentials, browser profile, private chats, or vault data, and passes all fifty-four non-destructive checks. AI Dock demonstrates that a useful desktop agent can be intelligent, observable, resumable, and bounded.
