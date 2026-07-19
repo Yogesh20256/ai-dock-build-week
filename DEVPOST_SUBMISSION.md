@@ -38,7 +38,7 @@ Codex was the primary engineering collaborator. It helped inspect the real Cachy
 
 ## Accomplishments
 
-- 190+ tools across 17 MCP capability families.
+- 180+ tools across 17 MCP capability families.
 - Explicit completion contracts for compound instructions.
 - Crash-safe resumable execution with bounded self-recovery.
 - Adaptive planner and tool reliability with circuit breakers.

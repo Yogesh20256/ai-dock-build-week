@@ -13,7 +13,7 @@ Desktop automation usually forces people to choose between brittle macros and ag
 ## Highlights
 
 - Natural commands, follow-up references, typo-tolerant entity resolution, and mandatory coverage of every clause in a multi-command request.
-- 190+ discoverable MCP tools across desktop, files, packages, development, research, documents, media, data, monitoring, knowledge, and automation.
+- 180+ discoverable MCP tools across desktop, files, packages, development, research, documents, media, data, monitoring, knowledge, and automation.
 - Cloud planning with local execution; untrusted model output never becomes a shell command directly.
 - Crash-safe action journals, resume support, idempotency checks, bounded recovery, undo records, and deterministic world-state verification.
 - Hyprland workspace-aware window opening, focusing, moving, closing, and normal-profile Brave reuse.

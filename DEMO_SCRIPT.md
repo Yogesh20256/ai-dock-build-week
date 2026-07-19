@@ -32,7 +32,7 @@ Show the intent timeline, approval, workspace change, folder and file result.
 
 **Visual:** Run `analyze examples/hello.c for warnings`, then show a concise result and capability count.
 
-**Narration:** “Seventeen MCP families cover development, research, knowledge, packages, documents, media, data, monitoring and automation. Deferred discovery keeps prompts compact while still exposing more than 190 structured tools.”
+**Narration:** “Seventeen MCP families cover development, research, knowledge, packages, documents, media, data, monitoring and automation. Deferred discovery keeps prompts compact while still exposing more than 180 structured tools.”
 
 ## 2:15–2:40 — Codex and evidence
 

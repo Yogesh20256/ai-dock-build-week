@@ -2,7 +2,7 @@ This is AI Dock, a natural-language desktop agent built for OpenAI Build Week. I
 
 A user can give AI Dock an informal, typo-filled, multi-step request. Every explicit clause becomes a mandatory intent contract. A cloud planner can interpret the language, but its output is treated as untrusted advice. Local schema, authority, workspace, and risk checks decide what may execute.
 
-More than one hundred ninety structured tools span seventeen MCP families, including desktop control, files, packages, development, research, documents, media, data, monitoring, knowledge, and reusable automation. Persistent typed state resolves follow-ups such as “move it” or “close that” without giving the model arbitrary shell access.
+More than one hundred eighty structured tools span seventeen MCP families, including desktop control, files, packages, development, research, documents, media, data, monitoring, knowledge, and reusable automation. Persistent typed state resolves follow-ups such as “move it” or “close that” without giving the model arbitrary shell access.
 
 Before side effects, each action is written to a crash-safe journal. Completed actions receive stable fingerprints, interrupted work can resume without repeating mutations, and observable outcomes such as files, windows, workspaces, and processes are verified. Failures trigger one bounded recovery pass instead of an uncontrolled loop.
 
