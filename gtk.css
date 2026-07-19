@@ -1,0 +1,41 @@
+window { background: #11131a; color: #f3f5ff; }
+.header { padding: 8px; background: #191c26; }
+.header .title { font-size: 16px; font-weight: 800; padding: 7px; }
+.header button { min-width: 34px; min-height: 34px; border-radius: 9px; }
+.danger:hover { background: #bd3e50; }
+.tabs { padding: 5px 8px 8px; }
+.tabs button { border-radius: 9px; font-weight: 700; }
+.tabs button:checked { background: #6957e8; color: white; }
+.local-status { padding: 9px 14px; color: #5fe0aa; font-size: 12px; }
+.prompt { background: #1c202b; border: 1px solid #34394b; border-radius: 11px; padding: 7px; }
+.send { min-width: 44px; border-radius: 11px; background: #6957e8; }
+.tiny { font-size: 10px; color: #9fa8c2; }
+.message { padding: 10px 12px; border-radius: 13px; background: #232735; }
+.message.user { background: #6957e8; color: white; }
+.waiting { color: #9fa8c2; font-style: italic; }
+.error { color: #ff9b9b; background: #3a2029; }
+.orb { min-width: 54px; min-height: 54px; border-radius: 99px; background: linear-gradient(135deg,#715cff,#13b8a6); color: white; font-size: 18px; font-weight: 900; }
+.flow-controls { padding: 10px 10px 0; }
+.flow-controls checkbutton { font-size: 11px; }
+.order-controls { padding: 0 10px 3px; }
+.order-controls button { min-width: 30px; min-height: 30px; padding: 2px; }
+.order-controls dropdown { min-width: 95px; }
+.flow-result { padding: 10px 12px; border-radius: 12px; background: #202431; }
+.result-title { color: #7ee0ba; font-weight: 800; margin-bottom: 4px; }
+.synth-box { padding: 10px; border-top: 1px solid #34394b; }
+.mcp-head { padding: 12px 12px 0; }
+.mcp-head button { min-width: 24px; min-height: 28px; padding: 3px 6px; }
+.mcp-safety { margin: 0 12px; padding: 9px; border-radius: 10px; background: #202431; }
+.mcp-planner { margin: 0 12px; }
+.mcp-messages { padding: 12px; }
+.history-drawer { background: #171a24; border-right: 1px solid #34394b; padding: 10px; }
+.history-list { background: transparent; }
+.history-row { padding: 8px; border-radius: 9px; margin: 2px 0; }
+.history-row:hover { background: #292e3d; }
+.mcp-actions { margin: 0 12px 10px; }
+.cloud-panel { padding: 18px; }
+.cloud-card { padding: 15px; border-radius: 13px; background: #202431; }
+.feature-head { padding: 12px 12px 0; }
+.section-title { font-size: 14px; font-weight: 800; color: #7ee0ba; }
+.health-row, .browser-row, .brain-result { padding: 8px; border-radius: 9px; background: #202431; }
+notebook > header tab { padding: 6px 9px; font-weight: 700; }

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=AI Dock
+Comment=Validated natural-language desktop agent
+Exec=@ROOT@/ai-dock --hide
+Icon=applications-development
+Terminal=false
+Categories=Utility;Development;
+StartupNotify=false

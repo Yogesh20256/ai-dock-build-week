@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Dock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="dock">
+    <header>
+      <div class="drag title">✦ <span>AI Dock</span></div>
+      <button id="reload" title="Reload current AI">↻</button>
+      <button id="hide" title="Hide to floating orb">—</button>
+      <button id="quit" class="danger" title="Close AI Dock completely">×</button>
+    </header>
+    <nav id="tabs"></nav>
+    <section id="views"></section>
+  </main>
+  <button id="orb" class="drag" title="Drag to move · Click to open"><span>AI</span></button>
+  <script src="renderer.js"></script>
+</body>
+</html>

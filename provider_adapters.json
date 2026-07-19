@@ -1,0 +1,30 @@
+{
+  "chatgpt": {
+    "input": ["#prompt-textarea", "textarea"],
+    "send": ["[data-testid='send-button']", "button[aria-label='Send prompt']", "button.composer-submit-button-color[aria-label*='Send']", "button[aria-label*='Send']"],
+    "response": ["[data-message-author-role='assistant']"],
+    "capture_user": ["[data-message-author-role='user']"],
+    "capture_assistant": ["[data-message-author-role='assistant']"]
+  },
+  "gemini": {
+    "input": ["rich-textarea .ql-editor[contenteditable='true']", ".ql-editor[contenteditable='true'][aria-label*='prompt' i]", "div[contenteditable='true'][role='textbox']", "div[contenteditable='true'][aria-label*='prompt' i]"],
+    "send": ["button[aria-label*='Send message' i]", "button[aria-label*='Send' i]", "button.send-button", "button[data-test-id*='send']"],
+    "response": ["model-response .markdown", "model-response message-content", "model-response"],
+    "capture_user": ["user-query"],
+    "capture_assistant": ["model-response"]
+  },
+  "deepseek": {
+    "input": ["textarea[placeholder*='DeepSeek']", "textarea"],
+    "send": [".ds-button--primary.ds-button--filled.ds-button--circle", "[role='button'][aria-label*='Send']"],
+    "response": [".ds-markdown", "[class*='markdown']"],
+    "capture_user": [".fbb737a4", "[class*='user-message']"],
+    "capture_assistant": [".ds-markdown", "[class*='markdown']"]
+  },
+  "hackerai": {
+    "input": ["textarea[data-testid='chat-input']", "textarea"],
+    "send": ["button[data-testid='send-button']", "button[aria-label*='Send']"],
+    "response": ["[data-testid='assistant-message']"],
+    "capture_user": ["[data-testid='user-message']"],
+    "capture_assistant": ["[data-testid='assistant-message']"]
+  }
+}

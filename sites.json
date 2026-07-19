@@ -1,0 +1,9 @@
+{
+  "sites": [
+    {"id": "chatgpt", "name": "ChatGPT", "short": "GPT", "url": "https://chatgpt.com"},
+    {"id": "gemini", "name": "Gemini", "short": "Gem", "url": "https://gemini.google.com/app"},
+    {"id": "deepseek", "name": "DeepSeek", "short": "Deep", "url": "https://chat.deepseek.com"},
+    {"id": "hackerai", "name": "HackerAI", "short": "Hack", "url": "https://hackerai.co"},
+    {"id": "qwen", "name": "Qwen 3 8B", "short": "Qwen", "type": "ollama", "model": "qwen3:8b"}
+  ]
+}
