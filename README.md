@@ -49,7 +49,7 @@ The demonstrated build targets **CachyOS/Arch Linux, Hyprland, Wayland, Python 3
 ## Quick start
 
 ```bash
-git clone https://github.com/YOUR-USER/ai-dock-build-week.git
+git clone https://github.com/Yogesh20256/ai-dock-build-week.git
 cd ai-dock-build-week
 ./install.sh
 ./ai-dock
