@@ -6,6 +6,16 @@ AI Dock is a natural-language desktop agent for Linux that turns conversational,
 
 ![AI Dock MCP desktop agent](assets/ai-dock-main.png)
 
+### Product tour
+
+| MCP agent | Multi-AI Flow |
+|---|---|
+| ![MCP agent](assets/features/mcp.png) | ![Parallel and review Flow](assets/features/flow.png) |
+
+| Control Center | Local Qwen |
+|---|---|
+| ![Control Center](assets/features/control.png) | ![Local Qwen model selector](assets/features/qwen.png) |
+
 ## Why it exists
 
 Desktop automation usually forces people to choose between brittle macros and agents with excessive, opaque authority. AI Dock separates understanding from execution: a capable planner proposes structured actions, while a local runtime validates schemas, explicit intent, permissions, risk, and observable outcomes before tools touch the computer.

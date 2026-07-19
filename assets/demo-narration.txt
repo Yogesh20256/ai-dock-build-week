@@ -1,11 +1,15 @@
 This is AI Dock, a natural-language desktop agent built for OpenAI Build Week. It began as a small always-on-top AI popup, then became an experiment in making computer automation powerful without making it opaque.
 
-A user can give AI Dock an informal, typo-filled, multi-step request. Every explicit clause becomes a mandatory intent contract. A cloud planner can interpret the language, but its output is treated as untrusted advice. Local schema, authority, workspace, and risk checks decide what may execute.
+The MCP agent accepts informal, typo-filled, multi-step requests. Every explicit clause becomes a mandatory intent contract. A cloud planner can interpret the language, while local schema, authority, workspace, and risk checks decide what may execute. The interface exposes confirmation, optional screen consent, task timelines, undo, persistent history, and one-click stopping.
 
-More than one hundred eighty structured tools span seventeen MCP families, including desktop control, files, packages, development, research, documents, media, data, monitoring, knowledge, and reusable automation. Persistent typed state resolves follow-ups such as “move it” or “close that” without giving the model arbitrary shell access.
+The Flow workspace can ask ChatGPT, Gemini, DeepSeek, HackerAI, Claude, Grok, and local Qwen together. Users can run them in parallel or define the exact review order, preserve checkpoints, and synthesize the results.
 
-Before side effects, each action is written to a crash-safe journal. Completed actions receive stable fingerprints, interrupted work can resume without repeating mutations, and observable outcomes such as files, windows, workspaces, and processes are verified. Failures trigger one bounded recovery pass instead of an uncontrolled loop.
+The Control Center makes the system observable. Health checks inspect every provider. Browser controls, Connected Brain memory, power capabilities, durable agent tasks, recovery information, and regression tests remain visible in one place.
 
-Codex was the primary engineering collaborator. It helped implement the runtime across many files, inspect the real CachyOS and Hyprland environment, diagnose failures, and convert those failures into permanent regression tests. The human supplied the product direction, real-world testing, safety choices, and acceptance criteria.
+For private local chat, the Qwen page discovers installed Ollama models. The user can switch models and enable or disable thinking for each question. Local chat is kept separate from privileged execution planning.
+
+Behind the interface, more than one hundred eighty structured tools span seventeen MCP families. Cloud output is untrusted advice, never direct shell code. Each action is validated, written to a crash-safe journal, fingerprinted, and checked against real files, windows, workspaces, or processes. Interrupted plans resume without repeating finished mutations, and failures receive one bounded recovery pass.
+
+Codex was the primary engineering collaborator. It helped implement the runtime, inspect the real CachyOS and Hyprland environment, diagnose failures, and convert those failures into permanent tests. The human supplied the product direction, real-world testing, safety choices, and acceptance criteria.
 
 The sanitized public edition contains no credentials, browser profile, private chats, or vault data, and passes all fifty-four non-destructive checks. AI Dock demonstrates that a useful desktop agent can be intelligent, observable, resumable, and bounded.
