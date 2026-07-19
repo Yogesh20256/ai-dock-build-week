@@ -3073,6 +3073,7 @@ class Dock(Gtk.ApplicationWindow):
         brain_box.append(self.brain_switch); brain_box.append(Gtk.Label(label="Brain", css_classes=["tiny"]))
         header.append(brain_box)
         cloud_menu = Gtk.MenuButton(icon_name="pan-down-symbolic", tooltip_text="Cloud browser popup")
+        self.cloud_menu = cloud_menu
         popover = Gtk.Popover()
         popover_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
         popover_box.set_margin_top(8); popover_box.set_margin_bottom(8)

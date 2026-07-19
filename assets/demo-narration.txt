@@ -1,15 +1,17 @@
-This is AI Dock, a natural-language desktop agent built for OpenAI Build Week. It began as a small always-on-top AI popup, then became an experiment in making computer automation powerful without making it opaque.
+This is AI Dock, a natural-language desktop agent built for OpenAI Build Week. It turns informal requests into observable and recoverable computer workflows without treating model output as automatic authority.
 
-The MCP agent accepts informal, typo-filled, multi-step requests. Every explicit clause becomes a mandatory intent contract. A cloud planner can interpret the language, while local schema, authority, workspace, and risk checks decide what may execute. The interface exposes confirmation, optional screen consent, task timelines, undo, persistent history, and one-click stopping.
+The MCP page exposes one hundred eighty plus structured tools, adaptive cloud planning, confirmation for risky work, optional screen consent, task timelines, undo, persistent history, and immediate stopping.
 
-The Flow workspace can ask ChatGPT, Gemini, DeepSeek, HackerAI, Claude, Grok, and local Qwen together. Users can run them in parallel or define the exact review order, preserve checkpoints, and synthesize the results.
+The hamburger menu opens ChatGPT, Gemini, DeepSeek, HackerAI, local Qwen, Flow, MCP, and Control. Providers with restrictive embedded-browser policies, including Claude and Grok, connect through the separate browser popup while remaining available to workflows.
 
-The Control Center makes the system observable. Health checks inspect every provider. Browser controls, Connected Brain memory, power capabilities, durable agent tasks, recovery information, and regression tests remain visible in one place.
+Flow can ask selected assistants in parallel or switch into Review Chain. The user chooses the exact order, moves providers up or down, saves reusable templates, resumes checkpoints, and synthesizes their perspectives.
 
-For private local chat, the Qwen page discovers installed Ollama models. The user can switch models and enable or disable thinking for each question. Local chat is kept separate from privileged execution planning.
+The Control Center makes the system observable. Health, browser sessions, Connected Brain memory, power capabilities, durable agent tasks, recovery details, and regression tests stay visible in one place.
 
-Behind the interface, more than one hundred eighty structured tools span seventeen MCP families. Cloud output is untrusted advice, never direct shell code. Each action is validated, written to a crash-safe journal, fingerprinted, and checked against real files, windows, workspaces, or processes. Interrupted plans resume without repeating finished mutations, and failures receive one bounded recovery pass.
+For private local chat, the Qwen page discovers installed Ollama models. Users can switch models and toggle thinking per question, while privileged MCP execution remains separately validated.
 
-Codex was the primary engineering collaborator. It helped implement the runtime, inspect the real CachyOS and Hyprland environment, diagnose failures, and convert those failures into permanent tests. The human supplied the product direction, real-world testing, safety choices, and acceptance criteria.
+Cloud plans are untrusted advice, never direct shell code. Intent contracts, recursive schemas, authority checks, risk gates, crash-safe journals, action fingerprints, bounded recovery, and real world-state verification remain local.
 
-The sanitized public edition contains no credentials, browser profile, private chats, or vault data, and passes all fifty-four non-destructive checks. AI Dock demonstrates that a useful desktop agent can be intelligent, observable, resumable, and bounded.
+Codex helped implement the runtime, inspect the real CachyOS and Hyprland environment, diagnose failures, and turn them into permanent tests. The human drove product direction, real-world testing, safety decisions, and acceptance criteria.
+
+The sanitized public edition contains no credentials, browser profile, private chats, or vault data, and passes all fifty-four non-destructive checks. AI Dock shows that desktop agency can be intelligent, observable, resumable, and bounded.
