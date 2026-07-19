@@ -4,6 +4,8 @@ AI Dock is a natural-language desktop agent for Linux that turns conversational,
 
 > OpenAI Build Week 2026 submission edition. The public repository contains no browser profile, cookies, chat exports, vault content, credentials, or machine-specific configuration.
 
+![AI Dock MCP desktop agent](assets/ai-dock-main.png)
+
 ## Why it exists
 
 Desktop automation usually forces people to choose between brittle macros and agents with excessive, opaque authority. AI Dock separates understanding from execution: a capable planner proposes structured actions, while a local runtime validates schemas, explicit intent, permissions, risk, and observable outcomes before tools touch the computer.
