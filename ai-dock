@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 ROOT="$(dirname "$(readlink -f "$0")")"
-exec python3 "$ROOT/ai_dock.py" "$@"
+exec "$ROOT/.venv/bin/python" "$ROOT/ai_dock.py" "$@"

@@ -77,7 +77,7 @@ Useful optional packages include `ollama`, `brave`, `obsidian`, `ffmpeg`, `tesse
 ## Test
 
 ```bash
-python power_suite_tests.py
+./run-tests
 ```
 
 The suite checks syntax, MCP discovery, natural-language routes, cloud-plan validation, contaminated JSON recovery, multi-clause contracts, task recovery, secret redaction, world-state verification, software identity resolution, research, knowledge, media, monitoring, and system-awareness. Tests avoid destructive desktop operations.
@@ -103,7 +103,7 @@ AI Dock existed as an early personal popup before the event. During the submissi
 Judges can evaluate the project without connecting personal accounts:
 
 1. Run `./install.sh` on a Hyprland/Wayland test account.
-2. Run `python power_suite_tests.py` for the non-destructive backend demonstration.
+2. Run `./run-tests` for the non-destructive backend demonstration.
 3. Launch `./ai-dock`, open MCP, and try `/help`, `show system resources`, `open w2`, or a file operation inside a disposable test directory.
 4. Keep **Confirm risky** enabled. Cloud website planners are optional; deterministic and local validation paths remain testable without logging into third-party sites.
 

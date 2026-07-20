@@ -8,7 +8,7 @@ DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/ai-dock"
 command -v python3 >/dev/null || { echo "python3 is required" >&2; exit 1; }
 command -v hyprctl >/dev/null || { echo "AI Dock's desktop layer currently requires Hyprland" >&2; exit 1; }
 
-python3 -m venv "$ROOT/.venv"
+python3 -m venv --system-site-packages "$ROOT/.venv"
 "$ROOT/.venv/bin/python" -m pip install --upgrade pip
 "$ROOT/.venv/bin/pip" install -r "$ROOT/requirements.txt"
 "$ROOT/.venv/bin/playwright" install chromium

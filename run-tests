@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+ROOT="$(dirname "$(readlink -f "$0")")"
+exec "$ROOT/.venv/bin/python" "$ROOT/power_suite_tests.py" "$@"
