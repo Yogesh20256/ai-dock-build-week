@@ -300,7 +300,7 @@ def main():
   actions=panel.deterministic_compound_fallback("create a folder name AI video inside the document and create a video of a monkey eating banana and save that video inside that folder")
   if not actions or len(actions)!=1:raise AssertionError(actions)
   args=actions[0]["arguments"]
-  if args.get("output_folder")!="/home/yogesh/Documents/AI video" or args.get("output_filename")!="a-monkey-eating-banana.mp4":raise AssertionError(args)
+  if args.get("output_folder")!=str(Path.home()/"Documents/AI video") or args.get("output_filename")!="a-monkey-eating-banana.mp4":raise AssertionError(args)
   if set(actions[0].get("covers",[]))!={"intent_1","intent_2","intent_3"}:raise AssertionError(actions[0].get("covers"))
   return "the user's exact failed sentence maps instantly to one verified video mission with explicit folder and filename"
  check("Deterministic video delivery route",deterministic_video_delivery)

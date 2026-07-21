@@ -15,7 +15,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; Shortcut: Win + C
 #c::
     ; Runs the command in WSL hidden so no cmd/powershell window flashes on screen.
-    Run, wsl.exe python3 ~/Documents/C_Programming/ai-dock/ai_dock.py, , Hide
+    Run, wsl.exe python3 ~/ai-dock/ai_dock.py, , Hide
 return
 
 ; ==============================================================================
@@ -23,6 +23,6 @@ return
 ; ==============================================================================
 ; #c::
 ; {
-;     Run("wsl.exe python3 ~/Documents/C_Programming/ai-dock/ai_dock.py", , "Hide")
+;     Run("wsl.exe python3 ~/ai-dock/ai_dock.py", , "Hide")
 ; }
 ; ==============================================================================

@@ -27,14 +27,8 @@ TOOLS=[
 
 def path(value,must=False):
  raw=str(value).strip()
- home_aliases={
-  '/home/yogesh/documents':'/home/yogesh/Documents','~/documents':'/home/yogesh/Documents',
-  '/home/yogesh/downloads':'/home/yogesh/Downloads','~/downloads':'/home/yogesh/Downloads',
-  '/home/yogesh/desktop':'/home/yogesh/Desktop','~/desktop':'/home/yogesh/Desktop',
-  '/home/yogesh/pictures':'/home/yogesh/Pictures','~/pictures':'/home/yogesh/Pictures',
-  '/home/yogesh/videos':'/home/yogesh/Videos','~/videos':'/home/yogesh/Videos',
-  '/home/yogesh/music':'/home/yogesh/Music','~/music':'/home/yogesh/Music',
- }
+ home_aliases={f'~/{name.lower()}':str(HOME/name) for name in ('Documents','Downloads','Desktop','Pictures','Videos','Music')}
+ for name in ('Documents','Downloads','Desktop','Pictures','Videos','Music'): home_aliases[f'{str(HOME).lower()}/{name.lower()}']=str(HOME/name)
  lowered=raw.lower()
  for alias,real in home_aliases.items():
   if lowered==alias or lowered.startswith(alias+'/'):

@@ -58,11 +58,9 @@ AI Dock uses systemd user timers to run scheduled automation recipes and backgro
 
 1. Navigate to your preferred directory inside WSL and clone the repository, or copy your files over. For example, to keep it in your WSL home directory:
    ```bash
-   cd ~
-   mkdir -p Documents/C_Programming
-   cd Documents/C_Programming
-   git clone <your-ai-dock-repo-url> ai-dock
-   cd ai-dock
+    cd ~
+    git clone <your-ai-dock-repo-url> ai-dock
+    cd ai-dock
    ```
 
 2. Run the automated installation script:
@@ -111,7 +109,7 @@ WSL shares the network loopback with Windows, meaning that local Ollama running 
 
 On Linux, `Super+C` is bound via your window manager to toggle the dock. On Windows, you can achieve the exact same behavior using AutoHotkey:
 
-1. Copy the [toggle_ai_dock.ahk](file:///home/yogesh/Documents/C_Programming/ai-dock/toggle_ai_dock.ahk) file from this repository to your Windows host machine.
+1. Copy the [toggle_ai_dock.ahk](toggle_ai_dock.ahk) file from this repository to your Windows host machine.
 2. Ensure you have [AutoHotkey](https://www.autohotkey.com/) installed.
 3. Right-click `toggle_ai_dock.ahk` and click **Run Script**.
 4. Press `Win + C` on your keyboard. The AI Dock window will slide open or hide on your Windows desktop seamlessly!

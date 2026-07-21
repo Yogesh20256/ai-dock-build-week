@@ -44,7 +44,7 @@ AI Dock includes an enabled **desktop** server for opening GitHub, websites, fil
 
 The enabled **browser** MCP uses Playwright and a persistent AI-controlled Brave profile at `~/.local/share/ai-dock/controlled-browser`. It reuses one tab, reads real page controls, supports WhatsApp Web, performs structured searches, and can click the first YouTube channel/video result. Sign into websites once inside that controlled Brave window; those sessions remain separate from your personal Brave profile.
 
-The enabled **brain** MCP connects AI Dock to the Obsidian vault at `/home/yogesh/Documents/Connected Brain`. It can list, search, read, append, and replace Markdown notes. MCP command history is mirrored under `Memory/`, and full Parallel/Review Chain reports are mirrored under `Workflows/`.
+The enabled **brain** MCP connects AI Dock to the Obsidian vault at `~/Documents/Connected Brain`. It can list, search, read, append, and replace Markdown notes. MCP command history is mirrored under `Memory/`, and full Parallel/Review Chain reports are mirrored under `Workflows/`.
 
 The header **Brain** switch is enabled by default. It selects up to six locally relevant notes (with a 12,000-character limit) and supplies them to local Qwen chat, Parallel, Review Chain, final synthesis, and local or web MCP planners. Turn it off for a request that should not use saved context.
 
