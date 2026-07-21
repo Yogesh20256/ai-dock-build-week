@@ -37,7 +37,7 @@ TOOLS=[
 ]
 def result(v): return {"content":[{"type":"text","text":str(v)}]}
 def safe(v,exists=False):
- raw=str(v or Path.home()).strip();aliases={f'~/{name.lower()}':str(Path.home()/name) for name in ('Documents','Downloads','Desktop','Pictures','Videos','Music')}
+ raw=str(v or Path.home()).strip();aliases={'/home/yogesh/documents':'/home/yogesh/Documents','~/documents':'/home/yogesh/Documents','/home/yogesh/downloads':'/home/yogesh/Downloads','~/downloads':'/home/yogesh/Downloads','/home/yogesh/desktop':'/home/yogesh/Desktop','~/desktop':'/home/yogesh/Desktop','/home/yogesh/pictures':'/home/yogesh/Pictures','~/pictures':'/home/yogesh/Pictures','/home/yogesh/videos':'/home/yogesh/Videos','~/videos':'/home/yogesh/Videos','/home/yogesh/music':'/home/yogesh/Music','~/music':'/home/yogesh/Music'}
  lower=raw.lower()
  for alias,real in aliases.items():
   if lower==alias or lower.startswith(alias+'/'):raw=real+raw[len(alias):];break

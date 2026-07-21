@@ -300,7 +300,7 @@ def main():
   actions=panel.deterministic_compound_fallback("create a folder name AI video inside the document and create a video of a monkey eating banana and save that video inside that folder")
   if not actions or len(actions)!=1:raise AssertionError(actions)
   args=actions[0]["arguments"]
-  if args.get("output_folder")!=str(Path.home()/"Documents/AI video") or args.get("output_filename")!="a-monkey-eating-banana.mp4":raise AssertionError(args)
+  if args.get("output_folder")!="/home/yogesh/Documents/AI video" or args.get("output_filename")!="a-monkey-eating-banana.mp4":raise AssertionError(args)
   if set(actions[0].get("covers",[]))!={"intent_1","intent_2","intent_3"}:raise AssertionError(actions[0].get("covers"))
   return "the user's exact failed sentence maps instantly to one verified video mission with explicit folder and filename"
  check("Deterministic video delivery route",deterministic_video_delivery)
@@ -392,7 +392,7 @@ def main():
   check("Brain graph",lambda:call("brain__brain_stats",{}))
   check("Brain context",lambda:call("brain__brain_context",{"query":"AI Dock memory automation","max_chars":1800}))
   check("Developer map",lambda:call("developer__project_overview",{"path":str(ROOT),"depth":1}))
-  check("C diagnostics",lambda:call("developer__analyze_c_file",{"path":str(ROOT/"examples/hello.c"),"standard":"c17"}))
+  check("C diagnostics",lambda:call("developer__analyze_c_file",{"path":str(ROOT.parent/"Loops/armstrong.c"),"standard":"c17"}))
   check("Workspace map",lambda:call("workspace__workspace_summary",{}))
   check("Media state",lambda:call("media__media_status",{}))
   check("Network state",lambda:call("media__network_status",{}))

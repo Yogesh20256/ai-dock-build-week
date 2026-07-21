@@ -1,0 +1,89 @@
+{
+  "servers": {
+    "desktop": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/desktop_mcp_server.py"],
+      "enabled": true
+    },
+    "web": {
+      "command": "/usr/bin/uvx",
+      "args": ["mcp-server-fetch"],
+      "enabled": true
+    },
+    "browser": {
+      "command": "/home/yogesh/Documents/C_Programming/ai-dock/.venv/bin/python",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/browser_mcp_server.py"],
+      "enabled": false
+    },
+    "brain": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/brain_mcp_server.py"],
+      "enabled": true
+    },
+    "packages": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/package_mcp_server.py"],
+      "enabled": true
+    },
+    "system": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/system_mcp_server.py"],
+      "enabled": true
+    },
+    "documents": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/document_mcp_server.py"],
+      "enabled": true
+    },
+    "automation": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/automation_mcp_server.py"],
+      "enabled": true
+    },
+    "developer": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/developer_mcp_server.py"],
+      "enabled": true
+    },
+    "workspace": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/workspace_mcp_server.py"],
+      "enabled": true
+    },
+    "media": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/media_mcp_server.py"],
+      "enabled": true
+    },
+    "data": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/data_mcp_server.py"],
+      "enabled": true
+    },
+    "operations": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/operations_mcp_server.py"],
+      "enabled": true
+    },
+    "monitor": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/monitor_mcp_server.py"],
+      "enabled": true
+    },
+    "missions": {
+      "command": "/home/yogesh/Documents/C_Programming/ai-dock/.venv/bin/python",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/mission_mcp_server.py"],
+      "enabled": true
+    },
+    "research": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/research_mcp_server.py"],
+      "enabled": true
+    },
+    "knowledge": {
+      "command": "/usr/bin/python3",
+      "args": ["/home/yogesh/Documents/C_Programming/ai-dock/knowledge_mcp_server.py"],
+      "enabled": true
+    }
+  }
+}
