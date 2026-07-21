@@ -157,9 +157,14 @@ def health_check():
         models = [item.get("name") for item in json.loads(reply.stdout).get("models", [])] if reply.returncode == 0 else []
         add("ollama", bool(models), ", ".join(models[:8]) or reply.stderr.strip())
     except Exception as error: add("ollama", False, error)
-    brain = Path.home() / "Documents" / "Connected Brain"
+    def find_vault():
+        for name in ("Obsidian Vault", "Connected Brain", "Brain"):
+            p = Path.home() / "Documents" / name
+            if p.is_dir(): return p
+        return Path.home() / "Documents" / "Obsidian Vault"
+    brain = find_vault()
     notes = sum(1 for _ in brain.rglob("*.md")) if brain.is_dir() else 0
-    add("connected-brain", notes > 0, f"{notes} Markdown notes")
+    add("obsidian-vault", notes > 0, f"{notes} Markdown notes")
     add("mcp-config", CONFIG.is_file(), CONFIG)
     try:
         tools = public_tools(); add("mcp-tools", len(tools) > 0, f"{len(tools)} tools across {len(set(item['name'].split('__',1)[0] for item in tools))} servers")

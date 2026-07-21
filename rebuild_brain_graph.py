@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Connect existing Connected Brain notes with useful Obsidian wikilinks."""
+"""Connect existing Obsidian Vault notes with useful Obsidian wikilinks."""
 import re
 from pathlib import Path
 
-VAULT = Path.home() / "Documents" / "Connected Brain"
+def find_vault():
+    for name in ("Obsidian Vault", "Connected Brain", "Brain"):
+        p = Path.home() / "Documents" / name
+        if p.is_dir(): return p
+    return Path.home() / "Documents" / "Obsidian Vault"
+VAULT = find_vault()
 
 
 def add_after_heading(path, line):
@@ -66,7 +71,7 @@ def main():
             if add_after_heading(note, f"Connected to [[Home]] · [[{hub}|{folder} Hub]]"): changed += 1
 
     (VAULT / "Brain Map.md").write_text(
-        "# Connected Brain Map\n\n"
+        "# Obsidian Vault Map\n\n"
         "This is the navigation hub for the persistent AI Dock memory.\n\n"
         "- [[Chats/Cross-AI Index|All AI chats]]\n"
         "- [[Memory/README|Durable memory]]\n"

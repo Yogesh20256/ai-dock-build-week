@@ -20,7 +20,7 @@ def safe_regression(data, brain, mcp_config, ollama_models, browser_targets):
         try: checks.append((name, True, str(fn())))
         except Exception as error: checks.append((name, False, str(error)))
     check("Ollama models", lambda: ", ".join(ollama_models()) or (_ for _ in ()).throw(RuntimeError("none")))
-    check("Connected Brain", lambda: f"{sum(1 for _ in brain.rglob('*.md'))} notes")
+    check("Obsidian Vault", lambda: f"{sum(1 for _ in brain.rglob('*.md'))} notes")
     check("Cookie database", lambda: f"{(data / 'cookies.sqlite').stat().st_size} bytes")
     check("Saved MCP memory", lambda: f"{len(json.loads((data / 'mcp_memory.json').read_text()))} entries")
     def mcp():
@@ -83,7 +83,7 @@ class FeatureCenter(Gtk.Box):
     def _brain_page(self):
         page = self.page("Brain")
         controls = Gtk.Box(spacing=6)
-        self.brain_query = Gtk.Entry(placeholder_text="Search Connected Brain…", hexpand=True); controls.append(self.brain_query)
+        self.brain_query = Gtk.Entry(placeholder_text="Search Obsidian Vault…", hexpand=True); controls.append(self.brain_query)
         search = Gtk.Button(label="Search"); search.connect("clicked", self.search_brain); controls.append(search)
         page.append(controls)
         pinrow = Gtk.Box(spacing=6)
@@ -284,7 +284,7 @@ class FeatureCenter(Gtk.Box):
         raw = self.note_path.get_text().strip()
         if not raw: raise ValueError("Enter a relative note path")
         candidate = (self.brain / raw).resolve()
-        if self.brain.resolve() not in candidate.parents or candidate.suffix.lower() != ".md": raise ValueError("Only Markdown notes inside Connected Brain are allowed")
+        if self.brain.resolve() not in candidate.parents or candidate.suffix.lower() != ".md": raise ValueError("Only Markdown notes inside Obsidian Vault are allowed")
         return candidate
 
     def load_note(self, *_):

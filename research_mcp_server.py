@@ -7,7 +7,12 @@ from ipaddress import ip_address
 from pathlib import Path
 
 ROOT=Path.home()/"Documents"/"AI Research";ROOT.mkdir(parents=True,exist_ok=True)
-BRAIN=Path.home()/"Documents"/"Connected Brain"
+def find_vault():
+    for name in ("Obsidian Vault", "Connected Brain", "Brain"):
+        p = Path.home() / "Documents" / name
+        if p.is_dir(): return p
+    return Path.home() / "Documents" / "Obsidian Vault"
+BRAIN = find_vault()
 UA="AI-Dock-Research/1.0 (+local source-backed research)"
 TOOLS=[
  {"name":"web_search","description":"Search the public web and return titles, URLs and snippets from multiple no-key search endpoints.","inputSchema":{"type":"object","properties":{"query":{"type":"string"},"limit":{"type":"integer","minimum":1,"maximum":20}},"required":["query"],"additionalProperties":False}},

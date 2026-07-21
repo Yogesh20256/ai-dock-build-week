@@ -42,7 +42,12 @@ PROVIDER_INTELLIGENCE = DATA / "provider_intelligence.json"
 TOOL_INTELLIGENCE = DATA / "tool_intelligence.json"
 MCP_STATE = DATA / "conversation_state.json"
 MCP_SESSIONS = DATA / "mcp_sessions.json"
-BRAIN_VAULT = Path.home() / "Documents" / "Connected Brain"
+def find_brain_vault():
+    for name in ("Obsidian Vault", "Connected Brain", "Brain"):
+        p = Path.home() / "Documents" / name
+        if p.is_dir(): return p
+    return Path.home() / "Documents" / "Obsidian Vault"
+BRAIN_VAULT = find_brain_vault()
 CLOUD_BRIDGE = ROOT / "external_ai_bridge.py"
 CLOUD_PYTHON = ROOT / ".venv" / "bin" / "python"
 CHAT_ARCHIVE_LOCK = threading.Lock()
@@ -1780,10 +1785,10 @@ Slash commands: /help · /new · /history · /tasks · /plan · /resume · /clea
 
     def clear_memory(self, *_):
         # Visual reset only. Preserve both the local context file and the full
-        # Connected Brain archive so later commands can still use memory.
+        # Obsidian Vault archive so later commands can still use memory.
         while child := self.messages.get_first_child(): self.messages.remove(child)
         self.current_session_id = None
-        self.add_chat("assistant", "Chat view cleared. Saved chats, long-term memory, and Connected Brain history were preserved.")
+        self.add_chat("assistant", "Chat view cleared. Saved chats, long-term memory, and Obsidian Vault history were preserved.")
 
     def refresh_tools(self, *_):
         if self.running: return
@@ -1811,7 +1816,7 @@ Slash commands: /help · /new · /history · /tasks · /plan · /resume · /clea
         if not parts: return False
         cmd_name = parts[0].lower()
         if cmd_name == "/help":
-            self.add_chat("assistant", self.HELP_TEXT + "\n/memo <text> · Save note to Connected Brain")
+            self.add_chat("assistant", self.HELP_TEXT + "\n/memo <text> · Save note to Obsidian Vault")
             return True
         if cmd_name == "/clear":
             self.clear_memory()
@@ -1892,11 +1897,11 @@ Slash commands: /help · /new · /history · /tasks · /plan · /resume · /clea
             return True
         if cmd_name in ("/memo", "/note"):
             if len(parts) < 2 or not parts[1].strip():
-                self.add_chat("assistant", "Usage: /memo <text to write to Obsidian Connected Brain>")
+                self.add_chat("assistant", "Usage: /memo <text to write to Obsidian Vault>")
                 return True
             note_content = parts[1].strip()
             archive_chat("Quick Memo", "user", note_content, "memo")
-            self.add_chat("assistant", "📝 Memo saved to daily note in Connected Brain.")
+            self.add_chat("assistant", "📝 Memo saved to daily note in Obsidian Vault.")
             return True
         return False
 

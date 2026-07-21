@@ -71,14 +71,14 @@ AI Dock uses systemd user timers to run scheduled automation recipes and backgro
 
 ---
 
-## Step 4: Link Your Obsidian Connected Brain Vault
+## Step 4: Link Your Obsidian Vault
 
 If you use Obsidian on Windows and want AI Dock to access the same notes:
 1. WSL automatically mounts your Windows drives under `/mnt/`. For example, your Windows user folder is at `/mnt/c/Users/<WindowsUsername>/`.
 2. Link your Windows Obsidian Vault into the expected Linux path by running:
    ```bash
    mkdir -p ~/Documents
-   ln -s "/mnt/c/Users/<WindowsUsername>/Documents/Connected Brain" "$HOME/Documents/Connected Brain"
+   ln -s "/mnt/c/Users/<WindowsUsername>/Documents/Obsidian Vault" "$HOME/Documents/Obsidian Vault"
    ```
    *(Be sure to replace `<WindowsUsername>` with your actual Windows account username).*
 

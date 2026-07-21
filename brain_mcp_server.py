@@ -7,7 +7,12 @@ from datetime import datetime
 from pathlib import Path
 
 
-VAULT = Path.home() / "Documents" / "Connected Brain"
+def find_vault():
+    for name in ("Obsidian Vault", "Connected Brain", "Brain"):
+        p = Path.home() / "Documents" / name
+        if p.is_dir(): return p
+    return Path.home() / "Documents" / "Obsidian Vault"
+VAULT = find_vault()
 VAULT.mkdir(parents=True, exist_ok=True)
 
 TOOLS = [
@@ -16,9 +21,9 @@ TOOLS = [
     {"name": "brain_write", "description": "Create, replace, or append to a Markdown note in the Obsidian brain.", "inputSchema": {"type": "object", "properties": {"note": {"type": "string"}, "content": {"type": "string"}, "mode": {"type": "string", "enum": ["append", "replace"]}}, "required": ["note", "content"], "additionalProperties": False}},
     {"name": "brain_list", "description": "List Markdown notes in the Obsidian brain, optionally under a folder.", "inputSchema": {"type": "object", "properties": {"folder": {"type": "string"}}, "additionalProperties": False}},
     {"name": "brain_context", "description": "Build a compact context packet from multiple relevant Brain notes for a new command or question.", "inputSchema": {"type": "object", "properties": {"query": {"type": "string"}, "max_chars": {"type": "integer", "minimum": 1000, "maximum": 30000}}, "required": ["query"], "additionalProperties": False}},
-    {"name": "brain_tasks", "description": "Find unfinished Markdown checkbox tasks across the Connected Brain, optionally filtered by a query.", "inputSchema": {"type": "object", "properties": {"query": {"type": "string"}, "limit": {"type": "integer", "minimum": 1, "maximum": 100}}, "additionalProperties": False}},
-    {"name": "brain_daily_note", "description": "Append a timestamped memory, decision, idea, or task to today's Connected Brain daily note.", "inputSchema": {"type": "object", "properties": {"content": {"type": "string"}, "section": {"type": "string", "enum": ["Memories", "Decisions", "Ideas", "Tasks"]}}, "required": ["content"], "additionalProperties": False}},
-    {"name": "brain_stats", "description": "Report Connected Brain size, links, orphan notes, unfinished tasks, and most-linked notes.", "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False}},
+    {"name": "brain_tasks", "description": "Find unfinished Markdown checkbox tasks across the Obsidian Vault, optionally filtered by a query.", "inputSchema": {"type": "object", "properties": {"query": {"type": "string"}, "limit": {"type": "integer", "minimum": 1, "maximum": 100}}, "additionalProperties": False}},
+    {"name": "brain_daily_note", "description": "Append a timestamped memory, decision, idea, or task to today's Obsidian Vault daily note.", "inputSchema": {"type": "object", "properties": {"content": {"type": "string"}, "section": {"type": "string", "enum": ["Memories", "Decisions", "Ideas", "Tasks"]}}, "required": ["content"], "additionalProperties": False}},
+    {"name": "brain_stats", "description": "Report Obsidian Vault size, links, orphan notes, unfinished tasks, and most-linked notes.", "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False}},
 ]
 
 STOP_WORDS = {"the","and","for","with","that","this","from","into","your","you","are","was","were","have","has","had","can","could","would","should","what","when","where","which","who","why","how","about","then","than","them","they","their","there","here","just","also","some","any","all","not","but","its","our","out","use","using"}
@@ -28,7 +33,7 @@ def safe_note(value):
     value = value.strip().replace("\\", "/")
     if not value.lower().endswith(".md"): value += ".md"
     path = (VAULT / value).resolve()
-    if VAULT.resolve() not in path.parents: raise ValueError("Note must remain inside the Connected Brain vault")
+    if VAULT.resolve() not in path.parents: raise ValueError("Note must remain inside the Obsidian Vault")
     return path
 
 
@@ -70,7 +75,7 @@ def call_tool(name, args):
         # their provider and index hubs, so they are not graph orphans.
         orphans = sum(1 for stem in stems if incoming[stem] == 0 and outgoing[stem] == 0)
         top = sorted(incoming.items(), key=lambda item: (-item[1], item[0]))[:8]
-        return text_result(f"Connected Brain\nNotes: {len(notes)}\nWiki links: {links}\nOrphan notes: {orphans}\nUnfinished tasks: {tasks}\nMost linked: " + ", ".join(f"{name} ({count})" for name, count in top))
+        return text_result(f"Obsidian Vault\nNotes: {len(notes)}\nWiki links: {links}\nOrphan notes: {orphans}\nUnfinished tasks: {tasks}\nMost linked: " + ", ".join(f"{name} ({count})" for name, count in top))
     if name == "brain_tasks":
         query, limit = str(args.get("query", "")).lower(), int(args.get("limit", 30)); found = []
         for path in VAULT.rglob("*.md"):

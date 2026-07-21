@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Import official AI chat exports and an authenticated ChatGPT history into Connected Brain."""
+"""Import official AI chat exports and an authenticated ChatGPT history into Obsidian Vault."""
 import argparse, hashlib, html, json, re, sqlite3, time, urllib.request, zipfile
 from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
 
-VAULT = Path.home() / "Documents" / "Connected Brain"
+def find_vault():
+    for name in ("Obsidian Vault", "Connected Brain", "Brain"):
+        p = Path.home() / "Documents" / name
+        if p.is_dir(): return p
+    return Path.home() / "Documents" / "Obsidian Vault"
+VAULT = find_vault()
 DEST = VAULT / "Imported Chats"
 MANIFEST = DEST / ".imported.json"
 
